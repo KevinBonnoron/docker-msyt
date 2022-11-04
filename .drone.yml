@@ -1,0 +1,14 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: DOCKERHUB_USERNAME
+    password:
+      from_secret: DOCKERHUB_PASSWORD
+    repo: kevinbonnoron/docker-msyt
+    tags: latest
